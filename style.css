@@ -1,0 +1,16 @@
+.mainContent {
+	min-height: 500px;
+	max-height: 100%;
+	background-color: #fff;
+}
+
+h1{
+	font-size: 38px;
+}
+h2{
+	font-size: 28px;
+	margin: 20px 0;
+}
+p {
+	font-size: 18px;
+}
