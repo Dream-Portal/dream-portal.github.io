@@ -9,6 +9,10 @@ h1 a {
 	color: #fff;
 }
 
+p {
+	font-size: 18px;
+}
+
 a:hover {
 	text-decoration: none;
 	color: #495057;
@@ -16,6 +20,7 @@ a:hover {
 
 .mainContent {
 	margin: 0 auto;
+	min-height: 500px;
 }
 
 .valign {
@@ -26,12 +31,11 @@ justify-items: center;
 
 .toggle {
 	width: 300px;
-	margin: 0 auto 5%;
+	margin: 0 auto 25px;
 }
 
 .toggle p {
 	display: inline-block;
-	font-size: 15px;
 }
 
 /* The switch - the box around the slider */
