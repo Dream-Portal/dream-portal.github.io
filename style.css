@@ -31,8 +31,8 @@ p {
 }
 
 .dropbtn {
-  background-color: #2fa4e7;
-  color: white;
+  background-color: #495057;
+  color: #fff;
   padding: 16px;
   font-size: 24px;
   border: none;
@@ -59,7 +59,7 @@ p {
 
 .dropdown:hover .dropdown-content {display: block;}
 
-.dropdown:hover .dropbtn {background-color: #2fa4e7;}
+.dropdown:hover .dropbtn {background-color: #495057;}
 
 @media screen and (max-width: 830px) {
 	.jumbotron {
