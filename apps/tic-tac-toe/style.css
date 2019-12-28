@@ -18,6 +18,18 @@ a:hover {
 	color: #495057;
 }
 
+.back {
+	display: inline-block;
+	position: absolute;
+	left: 50px;
+	top: 47px;
+	cursor: pointer;
+}
+
+.back:hover {
+	content: url("../../images/button - back - gray.png");
+}
+
 .mainContent {
 	margin: 0 auto;
 	min-height: 500px;
