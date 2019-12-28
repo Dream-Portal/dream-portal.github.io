@@ -21,8 +21,6 @@ a:hover {
 .back {
 	display: inline-block;
 	position: absolute;
-	left: 50px;
-	top: 47px;
 	cursor: pointer;
 }
 
