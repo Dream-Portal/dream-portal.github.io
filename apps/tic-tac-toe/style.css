@@ -1,3 +1,7 @@
+.mainContent {
+	margin: 0 auto;
+}
+
 .valign {
 display: flex;
 align-items: center;
