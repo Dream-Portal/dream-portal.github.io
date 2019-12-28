@@ -1,31 +1,62 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Tic Tac Toe</title>
+      <head>
+        <meta charset="utf-8">
+        <title>Tic Tac Toe</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cerulean/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css" />
+      </head>
 
-      <link rel="stylesheet" href="style.css">
+    <body>
+      <div class="jumbotron">
+        <h1 class="text-center" style="font-size: 28px"><a href="../../index.html">Dream Portal</a></h1>
+        <h2 class="text-center" style="font-size: 20px;color: #000;">Tic Tac Toe</h2>
+      </div>
+      <div class="row mainContent">
+        <div class="col-1">
+          <!--Advertisements go here-->
+        </div>
+        <div class="col-10"><!-- Rounded switch -->
+          <div class="toggle valign">
+            <div class="text-center" style="width: 120px">
+              <p>2 Player</p>
+            </div>
+              <label class="switch">
+                <input type="checkbox" id="AItoggle">
+                <span class="slider round"></span>
+              </label>
+              <div class="text-center" style="width: 120px">
+                <p>Player Vs. AI</p>
+              </div>
+          </div>
+        	<table>
+        		<tr>
+        			<td class="cell" id="0"></td>
+        			<td class="cell" id="1"></td>
+        			<td class="cell" id="2"></td>
+        		</tr>
+        		<tr>
+        			<td class="cell" id="3"></td>
+        			<td class="cell" id="4"></td>
+        			<td class="cell" id="5"></td>
+        		</tr>
+        		<tr>
+        			<td class="cell" id="6"></td>
+        			<td class="cell" id="7"></td>
+        			<td class="cell" id="8"></td>
+        		</tr>
+        	</table>
+        </div>
+      <div class="col-1">
+        <!--Advertisements go here-->
+      </div>
+    </div>
 
-  </head>
-
-  <body>
-
-  	<table>
-  		<tr>
-  			<td class="cell" id="0"></td>
-  			<td class="cell" id="1"></td>
-  			<td class="cell" id="2"></td>
-  		</tr>
-  		<tr>
-  			<td class="cell" id="3"></td>
-  			<td class="cell" id="4"></td>
-  			<td class="cell" id="5"></td>
-  		</tr>
-  		<tr>
-  			<td class="cell" id="6"></td>
-  			<td class="cell" id="7"></td>
-  			<td class="cell" id="8"></td>
-  		</tr>
-  	</table>
   	<div class="endgame">
   		<div class="text"></div>
   		<button class="reset" onClick="startGame()">Replay</button>

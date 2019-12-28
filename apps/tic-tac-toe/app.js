@@ -1,6 +1,6 @@
 var origBoard;
-const huPlayer = 'X';
-const aiPlayer = 'O';
+const player1 = 'X';
+const player2 = 'O';
 const winCombos = [
 	[0, 1, 2],
 	[3, 4, 5],
@@ -27,8 +27,8 @@ function startGame() {
 
 function turnClick(square) {
 	if (typeof origBoard[square.target.id] == 'number') {
-		turn(square.target.id, huPlayer)
-		if (!checkWin(origBoard, huPlayer) && !checkTie()) turn(bestSpot(), aiPlayer);
+		turn(square.target.id, player1)
+		if (!checkWin(origBoard, player1) && !checkTie()) turn(bestSpot(), player2);
 	}
 }
 
@@ -55,12 +55,12 @@ function checkWin(board, player) {
 function gameOver(gameWon) {
 	for (let index of winCombos[gameWon.index]) {
 		document.getElementById(index).style.backgroundColor =
-			gameWon.player == huPlayer ? "blue" : "red";
+			gameWon.player == player1 ? "blue" : "red";
 	}
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].removeEventListener('click', turnClick, false);
 	}
-	declareWinner(gameWon.player == huPlayer ? "You win!" : "You lose.");
+	declareWinner(gameWon.player == player1 ? "You win!" : "You lose.");
 }
 
 function declareWinner(who) {
@@ -73,7 +73,7 @@ function emptySquares() {
 }
 
 function bestSpot() {
-	return minimax(origBoard, aiPlayer).index;
+	return minimax(origBoard, player2).index;
 }
 
 function checkTie() {
@@ -91,9 +91,9 @@ function checkTie() {
 function minimax(newBoard, player) {
 	var availSpots = emptySquares();
 
-	if (checkWin(newBoard, huPlayer)) {
+	if (checkWin(newBoard, player1)) {
 		return {score: -10};
-	} else if (checkWin(newBoard, aiPlayer)) {
+	} else if (checkWin(newBoard, player2)) {
 		return {score: 10};
 	} else if (availSpots.length === 0) {
 		return {score: 0};
@@ -104,11 +104,11 @@ function minimax(newBoard, player) {
 		move.index = newBoard[availSpots[i]];
 		newBoard[availSpots[i]] = player;
 
-		if (player == aiPlayer) {
-			var result = minimax(newBoard, huPlayer);
+		if (player == player2) {
+			var result = minimax(newBoard, player1);
 			move.score = result.score;
 		} else {
-			var result = minimax(newBoard, aiPlayer);
+			var result = minimax(newBoard, player2);
 			move.score = result.score;
 		}
 
@@ -118,7 +118,7 @@ function minimax(newBoard, player) {
 	}
 
 	var bestMove;
-	if(player === aiPlayer) {
+	if(player === player2) {
 		var bestScore = -10000;
 		for(var i = 0; i < moves.length; i++) {
 			if (moves[i].score > bestScore) {
