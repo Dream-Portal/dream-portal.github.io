@@ -1,6 +1,7 @@
 var origBoard;
 const player1 = 'X';
 const player2 = 'O';
+var player1Turn = true;
 const winCombos = [
 	[0, 1, 2],
 	[3, 4, 5],
@@ -16,6 +17,7 @@ const cells = document.querySelectorAll('.cell');
 startGame();
 
 function startGame() {
+	player1Turn = true;
 	document.querySelector(".endgame").style.display = "none";
 	origBoard = Array.from(Array(9).keys());
 	for (var i = 0; i < cells.length; i++) {
@@ -27,8 +29,9 @@ function startGame() {
 
 function turnClick(square) {
 	if (typeof origBoard[square.target.id] == 'number') {
-		turn(square.target.id, player1)
-		if (!checkWin(origBoard, player1) && !checkTie()) turn(bestSpot(), player2);
+		if (player1Turn)turn(square.target.id, player1)
+		else turn(square.target.id, player2)
+		if (!checkWin(origBoard, player1) && !checkTie() && AItoggle.checked) turn(bestSpot(), player2);
 	}
 }
 
@@ -60,7 +63,7 @@ function gameOver(gameWon) {
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].removeEventListener('click', turnClick, false);
 	}
-	declareWinner(gameWon.player == player1 ? "You win!" : "You lose.");
+	declareWinner(gameWon.player == player1 ? player1 + " wins!" : player2 + " wins!");
 }
 
 function declareWinner(who) {
