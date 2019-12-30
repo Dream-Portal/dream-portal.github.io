@@ -98,9 +98,9 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(24px);
+  -ms-transform: translateX(24px);
+  transform: translateX(24px);
 }
 
 /* Rounded sliders */
@@ -149,15 +149,17 @@ table tr td:last-child {
   display: none;
   width: 180px;
 	top: auto;
-  margin-top: -345px;
+  margin-top: -344px;
   left: 50%;
   margin-left: -90px;
-  background-color: #0f3;
+  background-color: #ccc;
+	opacity: 96%;
   position: absolute;
   padding-top: 25px;
   padding-bottom: 35px;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 15px;
   color: black;
   font-size: 2em;
+	font-weight: bold;
 }

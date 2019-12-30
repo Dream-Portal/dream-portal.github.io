@@ -29,17 +29,27 @@ function startGame() {
 
 function turnClick(square) {
 	if (typeof origBoard[square.target.id] == 'number') {
-		if (player1Turn)turn(square.target.id, player1)
-		else turn(square.target.id, player2)
-		if (!checkWin(origBoard, player1) && !checkTie() && AItoggle.checked) turn(bestSpot(), player2);
-	}
+		if (player1Turn) {turn(square.target.id, player1);}
+		else {turn(square.target.id, player2);}
+		AImove();
+		}
+}
+
+function toggleClick() {
+	AImove();
 }
 
 function turn(squareId, player) {
 	origBoard[squareId] = player;
 	document.getElementById(squareId).innerText = player;
 	let gameWon = checkWin(origBoard, player)
+	if (player1Turn)	player1Turn = false;
+	else	player1Turn = true;
 	if (gameWon) gameOver(gameWon)
+}
+
+function AImove(){
+	if (!checkWin(origBoard, player1) && !checkTie() && AItoggle.checked && !player1Turn) turn(bestSpot(), player2);
 }
 
 function checkWin(board, player) {
