@@ -2,10 +2,10 @@ startGame();
 var userName = "";
 var userPassword = "";
 function startGame() {
-	lblLogin.innerText="Log In";
-	tbLogin.value="";
+	lblLogin.innerText = "Log In";
+	tbLogin.value = "";
 	userName = "";
-	userPassword="";
+	userPassword = "";
 	tbLogin.focus();
 }
 
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', init);
 
 function init(){
 	let textLogIn = document.getElementById('tbLogin');
-	textLogIn.addEventListener('keyPress', checkKeyPress);
+	textLogIn.addEventListener('keypress', checkKeyPress);
 }
 
 function checkKeyPress(ev){
@@ -23,6 +23,17 @@ function checkKeyPress(ev){
 	let char = ev.char || ev. charCode || ev.which;
 	let s = String.fromCharCode(char);
 	log(char, s, tag);
+	switch (char) {
+		case 13: //enter
+			btnLogIn.click();
+			break;
+	}
+}
+
+function lettersOnly(input)
+{
+	var regex = /[^a-z, ^0-9]/gi;
+	input.value = input.value.replace(regex, "");
 }
 
 function getUserInfo() {
@@ -44,7 +55,7 @@ function getUserInfo() {
 		tbLogin.value="";
 		tbLogin.type = "text";
 		tbLogin.placeholder = "Username";
-		alert("(test) Your password is " + userPassword);
+		log("Password: " + userPassword);
 		//check database for user info. If user data is correct: logIn.
 		logIn();
 	}

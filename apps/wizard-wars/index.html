@@ -32,8 +32,8 @@
     </div>
 
   	<div class="loginWindow" id="loginWindow">
-        <label for="tbLogin" id="lblLogin"></label>
-        <input style="text-align: center;" type="text" id="tbLogin" name="tbLogin" placeholder="Username">
+        <label for="tbLogin" id="lblLogin" ></label>
+        <input style="text-align: center;" type="text" id="tbLogin" name="tbLogin" placeholder="Username" onkeyup="lettersOnly(this)">
   		<button id="btnLogIn" class="btnLogIn" onClick="getUserInfo()">Log In</button>
   	</div>
 
